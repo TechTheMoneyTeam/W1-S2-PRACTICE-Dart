@@ -10,9 +10,57 @@ void main() {
   const instructions = "RAALAL";
 
   // Process the instructions and get the final position and direction
+  for(int i = 0;i<6;i++){
+    String go = instructions[i];
   
 
+  if(go == 'R'){
+    if(direction == Direction.north){
+      direction = Direction.east;
+    }
+    else if(direction == Direction.east){
+      direction = Direction.south;
+    }
+    else if(direction == Direction.south){
+      direction = Direction.west;
+    }
+    else if(direction == Direction.west){
+      direction = Direction.north;
+    }
+    }
+  
+  else if(go == 'A'){
+    if(direction == Direction.north){
+      y += 1;
+    }
+    else if(direction == Direction.west){
+      x -= 1;
+    }
+    else if(direction == Direction.east){
+      x += 1;
+    }
+    else if(direction == Direction.south){
+      y -= 1;
+    }
+  }
+  else if(go == 'L'){
+    if(direction == Direction.north){
+      direction = Direction.west;
+    }
+    else if(direction == Direction.west){
+      direction = Direction.south;
+    }
+    else if(direction == Direction.south){
+      direction = Direction.east;
+    }
+    else if(direction == Direction.east){
+      direction = Direction.north;
+    }
+  }
+
+  }
+  
   // Print the final position and direction
-  print("Final position:  ");
-  print("Facing:  ");
+  print("Final position: ($x, $y)");  // Print x and y as the final position
+  print("Facing: $direction");   
 }
