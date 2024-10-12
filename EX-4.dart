@@ -5,17 +5,16 @@ void main() {
     'pepperoni': 7.5,
     'vegetarian': 6.5,
   };
-
   // Example order
   const order = ['margherita', 'pepperoni', 'pineapple'];
-
+double total = 0;
   // Your code
-  double? price1 = pizzaPrices['margherita'];
-  double? price2 = pizzaPrices['pepperoni'];
-  double? price3 = pizzaPrices['vegetarian'];
-  double? x = price1! + price2! + price3!;
-  print("Total is $x");
-  if(pizzaPrices.keys != "pineapple"){
-    print("Pineapple pizza is not in the menu");
+  for(var i in order){
+    if(pizzaPrices[i] != null){
+      total += pizzaPrices[i]!;
+    }else {
+      print("$i pizza is not in the menu");
+    }
   }
+  print("Total is $total");
 }
