@@ -61,6 +61,6 @@ void main() {
   }
   
   // Print the final position and direction
-  print("Final position: ($x, $y)");  // Print x and y as the final position
+  print("Final position: ($x, $y)");  
   print("Facing: $direction");   
 }
